@@ -62,7 +62,7 @@ public class Main20 {
             case "12":
                 d = new Day12(day);
                 break;
-/*
+
             case "13":
                 d = new Day13(day);
                 break;
@@ -115,7 +115,6 @@ public class Main20 {
                 d = new Day25(day);
                 break;
 
- */
             default:
                 System.out.println("something went wrong... (:");
         }
