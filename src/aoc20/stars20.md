@@ -1,8 +1,4 @@
-# Advent Of Code
-Solving Eric Wastl's Advent of Code https://adventofcode.com/
-
-
-
+#Stars of 2020
 ```
               ..........|..........                 1 **
    .....'''''' .'  -  -  \- .''~ ~ ''''''.....      2 **
