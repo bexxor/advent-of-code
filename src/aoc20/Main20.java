@@ -5,7 +5,7 @@ import util.*;
 
 
 public class Main20 {
-    private static final String day = "01";
+    private static final String day = "13";
     private static final String part = "2";
 
     public static void main(String[] args) {
