@@ -2,6 +2,7 @@ package aoc20.days;
 
 import util.AoCDay;
 import util.CharCountingUtil;
+import util.GridUtil;
 
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class Day11 extends AoCDay {
         if (!seat.equals("L")) {
             return false;
         }
-        int count = CharCountingUtil.countNeighbours(i, j, seatPattern, "#");
+        int count = GridUtil.countNeighbours(i, j, seatPattern, "#");
         if (count == 0) {
             newSeatPattern[i][j] = "#";
             return true;
@@ -57,7 +58,7 @@ public class Day11 extends AoCDay {
         if (!seat.equals("#")) {
             return false;
         }
-        int count = CharCountingUtil.countNeighbours(i, j, seatPattern, "#");
+        int count = GridUtil.countNeighbours(i, j, seatPattern, "#");
         if (count >= 4) {
             newSeatPattern[i][j] = "L";
             return true;
@@ -71,7 +72,7 @@ public class Day11 extends AoCDay {
         if (!seat.equals("L")) {
             return false;
         }
-        int count = CharCountingUtil.countNeighboursQueen(i, j, seatPattern, "#");
+        int count = GridUtil.countNeighboursQueen(i, j, seatPattern, "#");
         if (count == 0) {
             newSeatPattern[i][j] = "#";
             return true;
@@ -84,7 +85,7 @@ public class Day11 extends AoCDay {
         if (!seat.equals("#")) {
             return false;
         }
-        int count = CharCountingUtil.countNeighboursQueen(i, j, seatPattern, "#");
+        int count = GridUtil.countNeighboursQueen(i, j, seatPattern, "#");
         if (count >= 5) {
             newSeatPattern[i][j] = "L";
             return true;

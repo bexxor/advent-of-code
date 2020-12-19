@@ -1,0 +1,194 @@
+package util;
+
+import java.util.Arrays;
+
+public class GridUtil {
+
+    public static int countNeighbours(int i, int j, String[][] array2d, String val) {
+        int count = 0;
+        if (i > 0) {
+            if (j > 0 && array2d[i - 1][j - 1].equals(val)) {
+                count++;
+            }
+            if (j < array2d[i].length - 1 && array2d[i - 1][j + 1].equals(val)) {
+                count++;
+            }
+            if (array2d[i - 1][j].equals(val)) {
+                count++;
+            }
+        }
+        if (i < array2d.length - 1) {
+            if (j > 0 && array2d[i + 1][j - 1].equals(val)) {
+                count++;
+            }
+            if (j < array2d[i].length - 1 && array2d[i + 1][j + 1].equals(val)) {
+                count++;
+            }
+            if (array2d[i + 1][j].equals(val)) {
+                count++;
+            }
+        }
+        if (j > 0 && array2d[i][j - 1].equals(val)) {
+            count++;
+        }
+        if (j < array2d[i].length - 1 && array2d[i][j + 1].equals(val)) {
+            count++;
+        }
+        return count;
+    }
+
+    public static int countNeighboursQueen(int i, int j, String[][] array2d, String val) {
+        int count = 0;
+        int sizeX = array2d.length;
+        int sizeY = array2d[0].length;
+
+        if (i > 0) {
+            if (j > 0) {
+                for (int k = 1; i - k >= 0 && j - k >= 0; k++) {
+                    String seat = array2d[i - k][j - k];
+                    if (seat.equals("L")) {
+                        break;
+                    }
+                    if (seat.equals(val)) {
+                        count++;
+                        break;
+                    }
+                }
+            }
+            if (j < sizeY) {
+                for (int k = 1; i - k >= 0 && j + k < sizeY; k++) {
+                    String seat = array2d[i - k][j + k];
+                    if (seat.equals("L")) {
+                        break;
+                    }
+                    if (seat.equals(val)) {
+                        count++;
+                        break;
+                    }
+                }
+            }
+            for (int k = 1; i - k >= 0; k++) {
+                String seat = array2d[i - k][j];
+                if (seat.equals("L")) {
+                    break;
+                }
+                if (seat.equals(val)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        if (i < array2d.length - 1) {
+            if (j > 0) {
+                for (int k = 1; i + k < sizeX && j - k >= 0; k++) {
+                    String seat = array2d[i + k][j - k];
+                    if (seat.equals("L")) {
+                        break;
+                    }
+                    if (seat.equals(val)) {
+                        count++;
+                        break;
+                    }
+                }
+            }
+            if (j < sizeY) {
+                for (int k = 1; i + k < sizeX && j + k < sizeY; k++) {
+                    String seat = array2d[i + k][j + k];
+                    if (seat.equals("L")) {
+                        break;
+                    }
+                    if (seat.equals(val)) {
+                        count++;
+                        break;
+                    }
+                }
+            }
+            for (int k = 1; i + k < sizeX; k++) {
+                String seat = array2d[i + k][j];
+                if (seat.equals("L")) {
+                    break;
+                }
+                if (seat.equals(val)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+
+        if (j > 0) {
+            for (int k = 1; j - k >= 0; k++) {
+                String seat = array2d[i][j - k];
+                if (seat.equals("L")) {
+                    break;
+                }
+                if (seat.equals(val)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        if (j < sizeY) {
+            for (int k = 1; j + k < sizeY; k++) {
+                String seat = array2d[i][j + k];
+                if (seat.equals("L")) {
+                    break;
+                }
+                if (seat.equals(val)) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
+    }
+
+
+    public static int countNeighbours3D(int i, int j, int k, String[][][] arr3d, String val) {
+        int count = 0;
+
+        if (i > 0) {
+            count += countNeighbours(j, k, arr3d[i-1], val);
+            count += arr3d[i-1][j][k].equals("#")?1:0;
+        }
+
+        if (i < arr3d.length - 1) {
+            count += countNeighbours(j, k, arr3d[i+1], val);
+            count += arr3d[i+1][j][k].equals("#")?1:0;
+
+        }
+        count += countNeighbours(j, k, arr3d[i], val );
+        return count;
+    }
+
+    public static int countNeighbours4D(int i, int j, int k, int l, String[][][][] arr4d, String val) {
+        int count = 0;
+
+        if (i > 0) {
+            count += countNeighbours3D(j, k, l, arr4d[i-1], val);
+            count += arr4d[i-1][j][k][l].equals("#")?1:0;
+        }
+
+        if (i < arr4d.length - 1) {
+            count += countNeighbours3D(j, k, l, arr4d[i+1], val);
+            count += arr4d[i+1][j][k][l].equals("#")?1:0;
+
+        }
+        count += countNeighbours3D(j, k, l, arr4d[i], val );
+        return count;
+    }
+
+    private static void print3D(String[][][] cube) {
+        for (String[][] square : cube) {
+            for (String[] line : square)
+                System.out.println(Arrays.toString(line));
+            System.out.println();
+        }
+    }
+
+    private static void print4D(String[][][][] hyperCube) {
+        for (String[][][] cube : hyperCube) {
+            print3D(cube);
+            System.out.println();
+        }
+    }
+}
