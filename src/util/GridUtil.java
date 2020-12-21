@@ -147,16 +147,16 @@ public class GridUtil {
         int count = 0;
 
         if (i > 0) {
-            count += countNeighbours(j, k, arr3d[i-1], val);
-            count += arr3d[i-1][j][k].equals("#")?1:0;
+            count += countNeighbours(j, k, arr3d[i - 1], val);
+            count += arr3d[i - 1][j][k].equals("#") ? 1 : 0;
         }
 
         if (i < arr3d.length - 1) {
-            count += countNeighbours(j, k, arr3d[i+1], val);
-            count += arr3d[i+1][j][k].equals("#")?1:0;
+            count += countNeighbours(j, k, arr3d[i + 1], val);
+            count += arr3d[i + 1][j][k].equals("#") ? 1 : 0;
 
         }
-        count += countNeighbours(j, k, arr3d[i], val );
+        count += countNeighbours(j, k, arr3d[i], val);
         return count;
     }
 
@@ -164,31 +164,102 @@ public class GridUtil {
         int count = 0;
 
         if (i > 0) {
-            count += countNeighbours3D(j, k, l, arr4d[i-1], val);
-            count += arr4d[i-1][j][k][l].equals("#")?1:0;
+            count += countNeighbours3D(j, k, l, arr4d[i - 1], val);
+            count += arr4d[i - 1][j][k][l].equals("#") ? 1 : 0;
         }
 
         if (i < arr4d.length - 1) {
-            count += countNeighbours3D(j, k, l, arr4d[i+1], val);
-            count += arr4d[i+1][j][k][l].equals("#")?1:0;
+            count += countNeighbours3D(j, k, l, arr4d[i + 1], val);
+            count += arr4d[i + 1][j][k][l].equals("#") ? 1 : 0;
 
         }
-        count += countNeighbours3D(j, k, l, arr4d[i], val );
+        count += countNeighbours3D(j, k, l, arr4d[i], val);
         return count;
     }
 
-    private static void print3D(String[][][] cube) {
+    public static void print2D(Long[][] square) {
+        for (Long[] line : square)
+            System.out.println(Arrays.toString(line));
+        System.out.println();
+    }
+
+    public static void print2D(String[][] square) {
+        for (String[] line : square)
+            System.out.println(Arrays.toString(line));
+        System.out.println();
+    }
+
+    public static void print3D(String[][][] cube) {
         for (String[][] square : cube) {
-            for (String[] line : square)
-                System.out.println(Arrays.toString(line));
+            print2D(square);
             System.out.println();
         }
     }
 
-    private static void print4D(String[][][][] hyperCube) {
+    public static void print4D(String[][][][] hyperCube) {
         for (String[][][] cube : hyperCube) {
             print3D(cube);
             System.out.println();
         }
+    }
+
+    public static String[][] rotate2D(int x, String[][] square) {
+        int size = square.length;
+        String[][] rotated = new String[size][size];
+
+        switch (x){
+            case (1):
+                for (int i = 0; i < size; ++i)
+                    for (int j = 0; j < size; ++j)
+                        rotated[i][j] = square[size - j - 1][i];
+                break;
+            case (2):
+                for (int i = 0; i < size; ++i)
+                    for (int j = 0; j < size; ++j)
+                        rotated[i][j] = square[size - i - 1][size-j-1];
+                break;
+            case(3):
+                for (int i = 0; i < size; ++i)
+                    for (int j = 0; j < size; ++j)
+                        rotated[i][j] = square[j][size-i-1];
+                break;
+            default:
+                return square;
+
+        }
+
+
+        return rotated;
+    }
+
+    public static String[][] flip2D(String[][] square) {
+        int size = square.length;
+        String[][] flipped = new String[size][size];
+
+        for (int i = 0; i < size; ++i)
+            for (int j = 0; j < size; ++j)
+                flipped[i][j] = square[size - i - 1][j];
+
+        return flipped;
+    }
+
+    public static boolean sameBorderRight(String[][] left, String[][] right){
+        int size = left.length;
+        boolean matches = true;
+
+        for (int i = 0; i < size; i++) {
+            matches &= left[i][size - 1].equals(right[i][0]);
+        }
+        return matches;
+    }
+
+    public static boolean sameBorderBottom(String[][] top, String[][] bottom){
+        int size = top.length;
+        boolean matches = true;
+
+        for (int i = 0; i < size; i++) {
+            matches &= top[size-1][i].equals(bottom[0][i]);
+        }
+        return matches;
     }
 }

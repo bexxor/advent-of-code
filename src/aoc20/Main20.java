@@ -5,8 +5,8 @@ import util.*;
 
 
 public class Main20 {
-    private static final String day = "19";
-    private static final String part = "2";
+    private static final String day = "20";
+    private static final String part = "1";
 
     public static void main(String[] args) {
         solveDay(day, part);
