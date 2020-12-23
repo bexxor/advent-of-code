@@ -237,8 +237,7 @@ public class GridUtil {
         String[][] flipped = new String[size][size];
 
         for (int i = 0; i < size; ++i)
-            for (int j = 0; j < size; ++j)
-                flipped[i][j] = square[size - i - 1][j];
+            System.arraycopy(square[size - i - 1], 0, flipped[i], 0, size);
 
         return flipped;
     }
@@ -246,7 +245,6 @@ public class GridUtil {
     public static boolean sameBorderRight(String[][] left, String[][] right){
         int size = left.length;
         boolean matches = true;
-
         for (int i = 0; i < size; i++) {
             matches &= left[i][size - 1].equals(right[i][0]);
         }
@@ -254,12 +252,15 @@ public class GridUtil {
     }
 
     public static boolean sameBorderBottom(String[][] top, String[][] bottom){
-        int size = top.length;
-        boolean matches = true;
+        return Arrays.equals(top[top.length - 1], bottom[0]);
+    }
 
+    public static String[][] removeBorders(String[][] square){
+        int size = square.length-2;
+        String[][] noBorders = new String[size][size];
         for (int i = 0; i < size; i++) {
-            matches &= top[size-1][i].equals(bottom[0][i]);
+            System.arraycopy(square[i + 1], 1, noBorders[i], 0, size);
         }
-        return matches;
+        return noBorders;
     }
 }

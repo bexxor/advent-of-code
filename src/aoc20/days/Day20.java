@@ -9,10 +9,12 @@ public class Day20 extends AoCDay {
 
     private static final int SIZE = 10;
     private final List<String> inputList;
-    private HashMap<Long, List<String[][]>> tiles;
-    private int side;
+    private final HashMap<Long, List<String[][]>> tiles;
+    private final int side;
     private HashMap<List<Integer>, Long> result;
     private HashMap<List<Integer>, String[][]> placement;
+    private Set<Long> corners;
+
 
     public Day20(String day) {
         super(day, true, 2020);
@@ -22,6 +24,7 @@ public class Day20 extends AoCDay {
         this.side = (int) Math.sqrt(tiles.size());
         this.result = new HashMap<>();
         this.placement = new HashMap<>();
+        this.corners = new HashSet<>();
     }
 
     @Override
@@ -49,7 +52,6 @@ public class Day20 extends AoCDay {
 
     @Override
     public String solve1() {
-        Set<Long> corners = new HashSet<>();
         for (Long id : tiles.keySet()) {
             if(hasTwoNeighbours(id, tiles.get(id).get(0))){
                 corners.add(id);
@@ -61,8 +63,25 @@ public class Day20 extends AoCDay {
 
     @Override
     public String solve2() {
+        /*
+        System.out.println();
+        GridUtil.print2D(tiles.get(1181L).get(0));
+        GridUtil.print2D(GridUtil.removeBorders(tiles.get(1181L).get(0)));
+
+         */
+
         return String.valueOf(-1);
     }
+
+    private List<String[][]> assembleImage(){
+        List<String[][]> image = new ArrayList<>();
+        for (int i = 0; i < side; i++) {
+            System.out.println();
+        }
+        return image;
+    }
+
+
 
     private String[][] position(int i, String[][] sq) {
         switch (i) {
