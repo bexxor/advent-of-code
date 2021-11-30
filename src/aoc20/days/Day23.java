@@ -26,7 +26,7 @@ public class Day23 extends AoCDay {
     private int[] cupArray;
 
 
-    public Day23(String day) {
+    public Day23(int day) {
         super(day, false, 2020);
         this.input = super.getInput();
         this.cups = new LinkedList<>();

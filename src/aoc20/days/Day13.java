@@ -12,7 +12,7 @@ public class Day13 extends AoCDay {
     private List<Long> busList;
     private final List<Integer> indices;
 
-    public Day13(String day) {
+    public Day13(int day) {
         super(day, true, 2020);
         this.inputList = Arrays.asList(super.getInputList().get(1).split(",").clone());
         this.departure = Integer.parseInt(super.getInputList().get(0));

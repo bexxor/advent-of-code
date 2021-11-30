@@ -1,4 +1,4 @@
-git package aoc20.days;
+package aoc20.days;
 
 import util.AoCDay;
 
@@ -8,7 +8,7 @@ public class Day06 extends AoCDay {
 
     private final List<String> inputList;
 
-    public Day06(String day) {
+    public Day06(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
     }

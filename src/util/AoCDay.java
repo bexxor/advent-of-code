@@ -5,18 +5,18 @@ import java.util.List;
 
 public abstract class AoCDay {
 
-    private final String day;
+    private final int day;
     public final String input;
     public final List<String> inputList;
 
-    public AoCDay(String day, boolean inputAsList, int year) {
+    public AoCDay(int day, boolean inputAsList, int year) {
         this.day = day;
         this.input = inputAsList ? "" : InputReaderUtil.inputAsStringLine(year, day);
         this.inputList = inputAsList ? InputReaderUtil.inputAsListOfLines(year, day) : new ArrayList<>();
     }
 
-    public final String solve(String part) {
-        return (part.equals("1")) ? this.solve1() : this.solve2();
+    public final String solve(int part) {
+        return (part==1) ? this.solve1() : this.solve2();
     }
 
     public abstract void handleInput(int part);
@@ -25,7 +25,7 @@ public abstract class AoCDay {
 
     public abstract String solve2();
 
-    public String getDay() {
+    public int getDay() {
         return day;
     }
 

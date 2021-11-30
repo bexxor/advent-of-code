@@ -11,7 +11,7 @@ public class Day01 extends AoCDay {
     private static final int SUM = 2020;
     private final List<String> inputList;
 
-    public Day01(String day) {
+    public Day01(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
     }

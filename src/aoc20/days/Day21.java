@@ -14,7 +14,7 @@ public class Day21 extends AoCDay {
     private final Set<String> contaminated;
     private final HashMap<String, List<String>> allergenOfIngredient;
 
-    public Day21(String day) {
+    public Day21(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         this.menus = new HashMap<>();

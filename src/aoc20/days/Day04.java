@@ -9,7 +9,7 @@ public class Day04 extends AoCDay {
     private final List<String> inputList;
     private final List<Map<String, String>> passports;
 
-    public Day04(String day) {
+    public Day04(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         this.passports = new ArrayList<>();

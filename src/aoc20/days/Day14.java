@@ -10,7 +10,7 @@ public class Day14 extends AoCDay {
     private final List<String> inputList;
     private HashMap<String, Long> memory;
 
-    public Day14(String day) {
+    public Day14(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         this.memory = new HashMap<>();

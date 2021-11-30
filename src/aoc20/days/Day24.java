@@ -8,7 +8,7 @@ public class Day24 extends AoCDay {
 
     private final List<String> inputList;
 
-    public Day24(String day) {
+    public Day24(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         handleInput(0);

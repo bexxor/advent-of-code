@@ -15,7 +15,7 @@ public class Day19 extends AoCDay {
     private String rule0;
 
 
-    public Day19(String day) {
+    public Day19(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         this.messages = new ArrayList<>();

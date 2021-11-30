@@ -12,7 +12,7 @@ public class Day22 extends AoCDay {
     private final Set<Deque<Integer>> history1;
     private final Set<Deque<Integer>> history2;
 
-    public Day22(String day) {
+    public Day22(int day) {
         super(day, true, 2020);
         this.inputList = super.getInputList();
         this.deck1 = new LinkedList<>();
