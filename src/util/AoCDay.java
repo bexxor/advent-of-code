@@ -8,11 +8,13 @@ public abstract class AoCDay {
     private final int day;
     public final String input;
     public final List<String> inputList;
+    public final List<String> testInputList;
 
     public AoCDay(int day, boolean inputAsList, int year) {
         this.day = day;
         this.input = inputAsList ? "" : InputReaderUtil.inputAsStringLine(year, day);
         this.inputList = inputAsList ? InputReaderUtil.inputAsListOfLines(year, day) : new ArrayList<>();
+        this.testInputList = InputReaderUtil.getTestInput(year);
     }
 
     public final String solve(int part) {

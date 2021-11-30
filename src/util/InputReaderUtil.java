@@ -42,6 +42,26 @@ public class InputReaderUtil {
         return input;
     }
 
+    public static List<String> getTestInput(int year) {
+        String filepath = year + "/testinput.txt";
+        File testInputFile;
+        URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
+        if (input == null) {
+            throw new IllegalArgumentException(filepath + " not found!!");
+        } else {
+            testInputFile =  new File(input.getFile());
+        }
+        List<String> inputLines = new ArrayList<>();
+        try {
+            InputStream is = new FileInputStream(testInputFile);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            inputLines = br.lines().collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return inputLines;
+    }
+
 
     public static List<String> inputAsListOfLines(int year, int day) {
         List<String> inputLines = new ArrayList<>();
