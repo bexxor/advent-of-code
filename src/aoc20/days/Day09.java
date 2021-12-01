@@ -13,14 +13,14 @@ public class Day09 extends AoCDay {
     private final List<Long> numbers;
 
     public Day09(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.numbers = new ArrayList<>();
         handleInput(0);
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         for (String line : this.inputList) {
             numbers.add(Long.parseLong(line));
         }

@@ -9,12 +9,12 @@ public class Day03 extends AoCDay {
     private final List<String> inputList;
 
     public Day03(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
     }
 
     @Override

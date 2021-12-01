@@ -27,7 +27,7 @@ public class Day23 extends AoCDay {
 
 
     public Day23(int day) {
-        super(day, false, 2020, 1);
+        super(day, 2020, 1);
         this.input = super.getInput();
         this.cups = new LinkedList<>();
         this.cups2 = new LinkedList<>();
@@ -46,7 +46,7 @@ public class Day23 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         String[] line = input.split("");
         int j;
         int len = line.length-1;

@@ -15,12 +15,12 @@ public class Day12 extends AoCDay {
     private int wY;
 
     public Day12(int day) {
-        super(day, true, 2021, 1);
+        super(day, 2021, 1);
         this.inputList = super.getInputList();
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
     }
 
     @Override

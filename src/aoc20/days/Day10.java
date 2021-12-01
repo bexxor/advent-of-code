@@ -14,7 +14,7 @@ public class Day10 extends AoCDay {
     private final List<Integer> lenSubList;
 
     public Day10(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.adapters = new ArrayList<>();
         this.lenSubList = new ArrayList<>();
@@ -22,7 +22,7 @@ public class Day10 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         this.adapters = this.inputList.stream().map(Integer::parseInt).sorted().collect(Collectors.toList());
         this.adapters.add(adapters.get(adapters.size() - 1) + 3);
         this.adapters.add(0, 0);

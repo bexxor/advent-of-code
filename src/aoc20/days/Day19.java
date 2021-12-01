@@ -16,7 +16,7 @@ public class Day19 extends AoCDay {
 
 
     public Day19(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.messages = new ArrayList<>();
         this.simpleRules = new HashMap<>();
@@ -24,7 +24,7 @@ public class Day19 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         int i, size = inputList.size();
         for (i = 0; i < size; i++) {
             String line = inputList.get(i);

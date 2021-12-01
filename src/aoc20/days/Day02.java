@@ -13,15 +13,15 @@ public class Day02 extends AoCDay {
 
 
     public Day02(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.passwordRules = new ArrayList<>();
-        handleInput(0);
+        handleInput();
 
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         for (String line : inputList) {
             int from = Integer.parseInt(line.replaceAll("-.*", ""));
             int to = Integer.parseInt(line.replaceAll("^\\d+-", "").replaceAll("\\s.*", ""));

@@ -12,12 +12,12 @@ public class Day11 extends AoCDay {
     private String[][] seatPattern;
 
     public Day11(int day) {
-        super(day, true, 2021, 1);
+        super(day, 2021, 1);
         this.inputList = super.getInputList();
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
     }
 
     @Override

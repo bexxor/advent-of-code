@@ -12,13 +12,13 @@ public class Day01 extends AoCDay {
 	private List<Integer> measurements;
 
 	public Day01(int day) {
-		super(day, true, 2021, 1);
-		handleInput(0);
+		super(day, 2021, 1);
+		handleInput();
 	}
 
 	@Override
-	public void handleInput(int part) {
-		this.measurements = getInputListAsInts();
+	public void handleInput() {
+		this.measurements = getInputAsListOfInts();
 	}
 
 	@Override

@@ -15,15 +15,14 @@ public class Day15 extends AoCDay {
     private final HashMap<Integer, Integer> lastIndex;
 
     public Day15(int day) {
-        super(day, false, 2020, 1);
+        super(day, 2020, 1);
         this.input = super.getInput();
         this.numbers = new ArrayList<>();
         this.lastIndex = new HashMap<>();
-        handleInput(0);
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         this.numbers = Arrays.stream(input.split(",")).map(Integer::parseInt).collect(Collectors.toList());
         for (int i = 0; i < numbers.size()-1; i++) {
             lastIndex.put(numbers.get(i), i);

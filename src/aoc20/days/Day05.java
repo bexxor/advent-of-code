@@ -12,14 +12,14 @@ public class Day05 extends AoCDay {
     private final List<Integer> seatIDs;
 
     public Day05(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.seatIDs = new ArrayList<>();
         handleInput(0);
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         for (String line : inputList) {
             String pass = line.replaceAll("[FL]", "0").replaceAll("[BR]", "1");
             int row = Integer.parseInt(pass.substring(0, 7), 2);

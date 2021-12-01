@@ -7,13 +7,12 @@ import util.InputReaderUtil;
 
 public class Main20 {
     private static final int day = 1;
-    private static final int part = 2;
 
     public static void main(String[] args) {
-        solveDay(day, part);
+        solveDay(day);
     }
 
-    public static void solveDay(int day, int part) {
+    public static void solveDay(int day) {
         AoCDay d = null;
         switch (day) {
             case 1 -> d = new Day01(day);
@@ -41,10 +40,7 @@ public class Main20 {
             case 23 -> d = new Day23(day);
             case 24 -> d = new Day24(day);
             case 25 -> d = new Day25(day);
-            default -> {
-                System.out.println("something went wrong... (:");
-                System.out.println(InputReaderUtil.SESSION);
-            }
+            default -> System.out.println("something went wrong... (:");
         }
         if (d != null) {
             System.out.println(d.solve());

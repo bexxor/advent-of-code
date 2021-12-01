@@ -13,17 +13,16 @@ public class Day22 extends AoCDay {
     private final Set<Deque<Integer>> history2;
 
     public Day22(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.deck1 = new LinkedList<>();
         this.deck2 = new LinkedList<>();
         this.history1 = new HashSet<>();
         this.history2 = new HashSet<>();
-        handleInput(0);
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         int size = inputList.size();
         int i;
         for (i = 1; i < size; i++) {

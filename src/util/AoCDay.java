@@ -1,51 +1,57 @@
 package util;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public abstract class AoCDay {
-    private final int day;
-    private final int part;
-    public final String input;
-    public final List<String> inputList;
-    public final List<String> testInputList;
+	protected final int day;
+	protected final int part;
+	public final Stream<String> inputStream;
+	public final List<String> testInputList;
 
-    public AoCDay(int day, boolean inputAsList, int year, int part) {
-        this.part = part;
-        this.day = day;
-        this.input = inputAsList ? "" : InputReaderUtil.inputAsStringLine(year, day);
-        this.inputList = inputAsList ? InputReaderUtil.inputAsListOfLines(year, day) : new ArrayList<>();
-        this.testInputList = InputReaderUtil.getTestInput(year);
-    }
+	public AoCDay(int day, int year, int part) {
+		this.part = part;
+		this.day = day;
+		this.inputStream = InputReaderUtil.inputAsStreamOfLines(year, day);
+		this.testInputList = InputReaderUtil.getTestInput(year);
+	}
 
-    public final String solve() {
-        return (this.part!=2) ? this.solve1() : this.solve2();
-    }
+	public final String solve() {
+		return (this.part != 2) ? this.solve1() : this.solve2();
+	}
 
-    public abstract void handleInput(int part);
+	public abstract void handleInput();
 
-    public abstract String solve1();
+	public abstract String solve1();
 
-    public abstract String solve2();
+	public abstract String solve2();
 
-    public int getDay() {
-        return day;
-    }
+	public int getDay() {
+		return day;
+	}
 
-    public String getInput() {
-        return input;
-    }
+	public int getPart() {
+		return part;
+	}
 
-    public List<String> getInputList() {
-        return inputList;
-    }
+	public String getInput() {
+		return inputStream.collect(Collectors.joining());
+	}
 
-    public List<Integer> getInputListAsInts() {
-        return inputList.stream().map(Integer::parseInt).collect(Collectors.toList());
-    }
+	public String[] getInputArray() {
+		return (String[]) inputStream.toArray();
+	}
 
-    public List<Long> getInputListAsLongs() {
-        return inputList.stream().map(Long::parseLong).collect(Collectors.toList());
-    }
+	public List<String> getInputList() {
+		return inputStream.collect(Collectors.toList());
+	}
+
+	public List<Integer> getInputAsListOfInts() {
+		return inputStream.map(Integer::parseInt).collect(Collectors.toList());
+	}
+
+	public List<Long> getInputAsListOfLongs() {
+		return inputStream.map(Long::parseLong).collect(Collectors.toList());
+	}
 }

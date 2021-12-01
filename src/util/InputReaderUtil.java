@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class InputReaderUtil {
 
@@ -63,16 +64,15 @@ public class InputReaderUtil {
     }
 
 
-    public static List<String> inputAsListOfLines(int year, int day) {
-        List<String> inputLines = new ArrayList<>();
+    public static Stream<String> inputAsStreamOfLines(int year, int day) {
         try {
             InputStream is = new FileInputStream(getInputFile(year, day));
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            inputLines = br.lines().collect(Collectors.toList());
+            return br.lines();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return inputLines;
+        return Stream.<String>builder().build();
     }
 
 

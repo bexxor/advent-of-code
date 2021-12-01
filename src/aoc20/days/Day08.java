@@ -12,14 +12,14 @@ public class Day08 extends AoCDay {
     private final List<Instruction> instructions;
 
     public Day08(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.instructions = new ArrayList<>();
         handleInput(0);
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         for (String line : inputList) {
             String instruction = line.replaceAll("\\d+|-|\\+|\\s+", "");
             int number = Integer.parseInt(line.replaceAll("[a-z]+|\\s+", ""));

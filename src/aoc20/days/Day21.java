@@ -15,7 +15,7 @@ public class Day21 extends AoCDay {
     private final HashMap<String, List<String>> allergenOfIngredient;
 
     public Day21(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.menus = new HashMap<>();
         this.ingredients = new HashSet<>();
@@ -27,7 +27,7 @@ public class Day21 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         for (String line : inputList) {
             List<String> contains = Arrays.asList(line.replaceAll(".*\\(contains |\\)", "").split(", "));
             List<String> menu = Arrays.asList(line.replaceAll("\\(.*", "").split(" "));

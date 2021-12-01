@@ -9,13 +9,12 @@ import java.time.LocalDate;
 
 public class Main21 {
     private static final int day = LocalDate.now().getDayOfMonth();
-    private static final int part = 2;
 
     public static void main(String[] args) {
-        solveDay(day, part);
+        solveDay(day);
     }
 
-    public static void solveDay(int day, int part) {
+    public static void solveDay(int day) {
         AoCDay d = null;
         switch (day) {
             case 1 -> d = new Day01(day);

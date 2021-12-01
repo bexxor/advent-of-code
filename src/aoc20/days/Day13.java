@@ -13,7 +13,7 @@ public class Day13 extends AoCDay {
     private final List<Integer> indices;
 
     public Day13(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = Arrays.asList(super.getInputList().get(1).split(",").clone());
         this.departure = Integer.parseInt(super.getInputList().get(0));
         this.busList = new ArrayList<>();
@@ -22,7 +22,7 @@ public class Day13 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         this.busList = this.inputList.stream().filter(bus -> !bus.equals("x")).map(Long::parseLong).collect(Collectors.toList());
         inputList.stream().filter(bus -> !bus.equals("x"))
                 .forEach(bus -> indices.add((Integer.parseInt(bus) * 10 - inputList.indexOf(bus)) % Integer.parseInt(bus)));

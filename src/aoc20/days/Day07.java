@@ -12,7 +12,7 @@ public class Day07 extends AoCDay {
     private final HashMap<String, HashMap<String, Integer>> bagAmount;
 
     public Day07(int day) {
-        super(day, true, 2020, 1);
+        super(day, 2020, 1);
         this.inputList = super.getInputList();
         this.bags = new HashSet<>();
         this.bagRules = new HashMap<>();
@@ -20,7 +20,7 @@ public class Day07 extends AoCDay {
     }
 
     @Override
-    public void handleInput(int part) {
+    public void handleInput() {
         if (part == 1) {
             for (String line : inputList) {
                 String bag = line.replaceAll(" bags? contain.*$", "");
@@ -47,7 +47,7 @@ public class Day07 extends AoCDay {
 
     @Override
     public String solve1() {
-        handleInput(1);
+        handleInput();
         int count = 0;
         for (String bag : bags) {
             if (bagContainsShinyGold(bag)) {
@@ -59,7 +59,7 @@ public class Day07 extends AoCDay {
 
     @Override
     public String solve2() {
-        handleInput(2);
+        handleInput();
         return String.valueOf(amountInsideBag("shiny gold"));
     }
 
