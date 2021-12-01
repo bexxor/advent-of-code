@@ -2,6 +2,7 @@ package util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class AoCDay {
 
@@ -37,5 +38,13 @@ public abstract class AoCDay {
 
     public List<String> getInputList() {
         return inputList;
+    }
+
+    public List<Integer> getInputListAsInts() {
+        return inputList.stream().map(Integer::parseInt).collect(Collectors.toList());
+    }
+
+    public List<Long> getInputListAsLongs() {
+        return inputList.stream().map(Long::parseLong).collect(Collectors.toList());
     }
 }

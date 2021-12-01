@@ -4,9 +4,11 @@ import aoc21.days.*;
 import util.AoCDay;
 import util.InputReaderUtil;
 
+import java.time.LocalDate;
+
 
 public class Main21 {
-    private static final int day = 1;
+    private static final int day = LocalDate.now().getDayOfMonth();
     private static final int part = 2;
 
     public static void main(String[] args) {
