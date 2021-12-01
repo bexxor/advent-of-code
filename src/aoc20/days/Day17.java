@@ -18,7 +18,7 @@ public class Day17 extends AoCDay {
     private final Stack<List<Integer>> change;
 
     public Day17(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.conwayCube = new String[S][S][S];
         this.hyperCube = new String[S][S][S][S];

@@ -12,7 +12,7 @@ public class Day01 extends AoCDay {
 	private List<Integer> measurements;
 
 	public Day01(int day) {
-		super(day, true, 2021);
+		super(day, true, 2021, 1);
 		handleInput(0);
 	}
 

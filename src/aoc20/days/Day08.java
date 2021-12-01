@@ -12,7 +12,7 @@ public class Day08 extends AoCDay {
     private final List<Instruction> instructions;
 
     public Day08(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.instructions = new ArrayList<>();
         handleInput(0);

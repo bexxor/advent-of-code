@@ -47,7 +47,7 @@ public class Main20 {
             }
         }
         if (d != null) {
-            System.out.println(d.solve(part));
+            System.out.println(d.solve());
         }
     }
 }

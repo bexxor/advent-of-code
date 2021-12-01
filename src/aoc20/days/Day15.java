@@ -15,7 +15,7 @@ public class Day15 extends AoCDay {
     private final HashMap<Integer, Integer> lastIndex;
 
     public Day15(int day) {
-        super(day, false, 2020);
+        super(day, false, 2020, 1);
         this.input = super.getInput();
         this.numbers = new ArrayList<>();
         this.lastIndex = new HashMap<>();

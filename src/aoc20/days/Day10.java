@@ -14,7 +14,7 @@ public class Day10 extends AoCDay {
     private final List<Integer> lenSubList;
 
     public Day10(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.adapters = new ArrayList<>();
         this.lenSubList = new ArrayList<>();

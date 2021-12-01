@@ -15,7 +15,7 @@ public class Day12 extends AoCDay {
     private int wY;
 
     public Day12(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.x = 0;
         this.y = 0;

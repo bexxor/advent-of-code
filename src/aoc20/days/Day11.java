@@ -13,7 +13,7 @@ public class Day11 extends AoCDay {
     private String[][] seatPattern;
 
     public Day11(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         seatPattern = new String[inputList.size()][inputList.get(0).length()];
         handleInput(0);

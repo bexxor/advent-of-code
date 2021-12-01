@@ -13,7 +13,7 @@ public class Day02 extends AoCDay {
 
 
     public Day02(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.passwordRules = new ArrayList<>();
         handleInput(0);

@@ -43,13 +43,10 @@ public class Main21 {
             case 23 -> d = new Day23(day);
             case 24 -> d = new Day24(day);
             case 25 -> d = new Day25(day);
-            default -> {
-                System.out.println("something went wrong... (:");
-                System.out.println(InputReaderUtil.SESSION);
-            }
+            default -> System.out.println("something went wrong... (:");
         }
         if (d != null) {
-            System.out.println(d.solve(part));
+            System.out.println(d.solve());
         }
     }
 }

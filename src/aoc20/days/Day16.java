@@ -17,7 +17,7 @@ public class Day16 extends AoCDay {
     private final HashMap<Integer, String> rules;
 
     public Day16(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.nearbyTickets = new ArrayList<>();
         this.invalidTickets = new ArrayList<>();

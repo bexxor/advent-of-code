@@ -12,7 +12,7 @@ public class Day07 extends AoCDay {
     private final HashMap<String, HashMap<String, Integer>> bagAmount;
 
     public Day07(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.bags = new HashSet<>();
         this.bagRules = new HashMap<>();

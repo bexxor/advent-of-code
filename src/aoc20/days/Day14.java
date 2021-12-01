@@ -11,7 +11,7 @@ public class Day14 extends AoCDay {
     private HashMap<String, Long> memory;
 
     public Day14(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.memory = new HashMap<>();
         handleInput(0);

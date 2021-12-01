@@ -14,7 +14,7 @@ public class Day15 extends AoCDay {
     private List<Integer> numbers;
 
     public Day15(int day) {
-        super(day, false, 2021);
+        super(day, false, 2021, 1);
         this.input = super.getInput();
     }
 

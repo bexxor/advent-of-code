@@ -13,7 +13,7 @@ public class Day18 extends AoCDay {
     private final List<List<String>> equations;
 
     public Day18(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.equations = new ArrayList<>();
         handleInput(0);

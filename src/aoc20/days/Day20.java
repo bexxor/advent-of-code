@@ -17,7 +17,7 @@ public class Day20 extends AoCDay {
 
 
     public Day20(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.tiles = new HashMap<>();
         handleInput(0);

@@ -12,7 +12,7 @@ public class Day05 extends AoCDay {
     private final List<Integer> seatIDs;
 
     public Day05(int day) {
-        super(day, true, 2020);
+        super(day, true, 2020, 1);
         this.inputList = super.getInputList();
         this.seatIDs = new ArrayList<>();
         handleInput(0);
