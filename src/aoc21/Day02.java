@@ -1,32 +1,35 @@
 package aoc21;
 
-import aocUniverse.Password;
 import util.AoCDay;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Day02 extends AoCDay {
 
-    private final List<String> inputList;
+	private final List<String[]> directions;
+	private final Submarine sub;
 
+	public Day02(int day) {
+		super(day, 2021, 2);
+		this.directions = this.inputStream.map(l -> l.split(" ")).collect(Collectors.toList());
+		this.sub = new Submarine();
+	}
 
-    public Day02(int day) {
-        super(day, 2021, 1);
-        this.inputList = super.getInputList();
-    }
+	@Override
+	public void handleInput() {
 
-    @Override
-    public void handleInput() {
-    }
+	}
 
-    @Override
-    public String solve1() {
-        return String.valueOf(-1);
-    }
+	@Override
+	public String solve1() {
+		this.directions.forEach(d -> sub.move1(d[0], d[1]));
+		return String.valueOf(sub.x * sub.y);
+	}
 
-    @Override
-    public String solve2() {
-        return String.valueOf(-1);
-    }
+	@Override
+	public String solve2() {
+		this.directions.forEach(d -> sub.move(d[0], d[1]));
+		return String.valueOf(sub.x * sub.y);
+	}
 }

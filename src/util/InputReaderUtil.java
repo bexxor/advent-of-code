@@ -43,7 +43,7 @@ public class InputReaderUtil {
         return input;
     }
 
-    public static List<String> getTestInput(int year) {
+    public static Stream<String> getTestInput(int year) {
         String filepath = year + "/testinput.txt";
         File testInputFile;
         URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
@@ -52,15 +52,14 @@ public class InputReaderUtil {
         } else {
             testInputFile =  new File(input.getFile());
         }
-        List<String> inputLines = new ArrayList<>();
         try {
             InputStream is = new FileInputStream(testInputFile);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            inputLines = br.lines().collect(Collectors.toList());
+            return br.lines();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return inputLines;
+        return Stream.<String>builder().build();
     }
 
 

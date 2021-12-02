@@ -8,13 +8,13 @@ public abstract class AoCDay {
 	protected final int day;
 	protected final int part;
 	public final Stream<String> inputStream;
-	public final List<String> testInputList;
+	public final Stream<String> testStream;
 
 	public AoCDay(int day, int year, int part) {
 		this.part = part;
 		this.day = day;
 		this.inputStream = InputReaderUtil.inputAsStreamOfLines(year, day);
-		this.testInputList = InputReaderUtil.getTestInput(year);
+		this.testStream = InputReaderUtil.getTestInput(year);
 	}
 
 	public final String solve() {
@@ -37,6 +37,10 @@ public abstract class AoCDay {
 
 	public String getInput() {
 		return inputStream.collect(Collectors.joining());
+	}
+
+	public Stream<String> getInputStream() {
+		return inputStream;
 	}
 
 	public String[] getInputArray() {
