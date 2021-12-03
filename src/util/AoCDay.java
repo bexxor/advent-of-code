@@ -43,6 +43,10 @@ public abstract class AoCDay {
 		return inputStream;
 	}
 
+	public Stream<String> getTestStream() {
+		return testStream;
+	}
+
 	public String[] getInputArray() {
 		return (String[]) inputStream.toArray();
 	}
