@@ -15,14 +15,11 @@ public class Day03 extends AoCDay {
 	private final List<char[]> bytes;
 	private Map<Integer, Map<Character, Integer>> frequencies;
 	int len;
-	char[] wrong;
 
 	public Day03(int day) {
 		super(day, 2021, 2);
 		bytes = getInputStream().map(String::toCharArray).collect(Collectors.toList());
 		len = bytes.get(0).length;
-		wrong = new char[len];
-		Arrays.fill(wrong, '2');
 		handleInput();
 	}
 
@@ -82,7 +79,6 @@ public class Day03 extends AoCDay {
 			char most = freq.get('0')>freq.get('1')?'0':'1';
 			int finalI = i;
 			List<char[]> curr = byteList.stream().filter(b -> b[finalI]==most).collect(Collectors.toList());
-			//List<char[]> correct = curr.stream().filter(b -> b!= wrong).collect(Collectors.toList());
 			if(curr.size() == 1){
 				return binToDec(curr.get(0));
 			} else {
@@ -99,7 +95,6 @@ public class Day03 extends AoCDay {
 			char least = freq.get('0')>freq.get('1')?'1':'0';
 			int finalI = i;
 			List<char[]> curr = byteList.stream().filter(b -> b[finalI]==least).collect(Collectors.toList());
-			//List<char[]> correct = curr.stream().filter(b -> b!= wrong).collect(Collectors.toList());
 			if(curr.size() == 1){
 				return binToDec(curr.get(0));
 			} else {
