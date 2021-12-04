@@ -5,16 +5,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public abstract class AoCDay {
+	protected final int year;
 	protected final int day;
 	protected final int part;
-	public final Stream<String> inputStream;
-	public final Stream<String> testStream;
 
 	public AoCDay(int day, int year, int part) {
+		this.year = year;
 		this.part = part;
 		this.day = day;
-		this.inputStream = InputReaderUtil.inputAsStreamOfLines(year, day);
-		this.testStream = InputReaderUtil.getTestInput(year);
 	}
 
 	public final String solve() {
@@ -27,39 +25,39 @@ public abstract class AoCDay {
 
 	public abstract String solve2();
 
-	public int getDay() {
-		return day;
-	}
-
-	public int getPart() {
-		return part;
-	}
-
 	public String getInput() {
-		return inputStream.collect(Collectors.joining());
+		return InputReaderUtil.inputAsStreamOfLines(year, day).collect(Collectors.joining());
+	}
+
+	public String getFirstLine() {
+		return InputReaderUtil.getFirstLine(year, day);
 	}
 
 	public Stream<String> getInputStream() {
-		return inputStream;
+		return InputReaderUtil.inputAsStreamOfLines(year, day);
 	}
 
 	public Stream<String> getTestStream() {
-		return testStream;
+		return InputReaderUtil.getTestInput(year);
+	}
+
+	public List<String> getTestList() {
+		return InputReaderUtil.getTestInput(year).collect(Collectors.toList());
 	}
 
 	public String[] getInputArray() {
-		return (String[]) inputStream.toArray();
+		return (String[]) InputReaderUtil.inputAsStreamOfLines(year, day).toArray();
 	}
 
 	public List<String> getInputList() {
-		return inputStream.collect(Collectors.toList());
+		return InputReaderUtil.inputAsStreamOfLines(year, day).collect(Collectors.toList());
 	}
 
 	public List<Integer> getInputAsListOfInts() {
-		return inputStream.map(Integer::parseInt).collect(Collectors.toList());
+		return InputReaderUtil.inputAsStreamOfLines(year, day).map(Integer::parseInt).collect(Collectors.toList());
 	}
 
 	public List<Long> getInputAsListOfLongs() {
-		return inputStream.map(Long::parseLong).collect(Collectors.toList());
+		return InputReaderUtil.inputAsStreamOfLines(year, day).map(Long::parseLong).collect(Collectors.toList());
 	}
 }

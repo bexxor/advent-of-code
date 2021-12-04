@@ -12,7 +12,7 @@ public class Day02 extends AoCDay {
 
 	public Day02(int day) {
 		super(day, 2021, 2);
-		this.directions = this.inputStream.map(l -> l.split(" ")).collect(Collectors.toList());
+		this.directions = getInputStream().map(l -> l.split(" ")).collect(Collectors.toList());
 		this.sub = new Submarine();
 	}
 
