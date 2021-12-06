@@ -18,6 +18,26 @@ public class InputReaderUtil {
         return input;
     }
 
+    public static String getTestFirstLine(int year) {
+        String filepath = year + "/test.txt";
+        File testInputFile;
+        URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
+        if (input == null) {
+            throw new IllegalArgumentException(filepath + " not found!!");
+        } else {
+            testInputFile =  new File(input.getFile());
+        }
+        String inputLine = "";
+        try {
+            InputStream is = new FileInputStream(testInputFile);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            inputLine = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return inputLine;
+    }
+
     public static Stream<String> getTestInput(int year) {
         String filepath = year + "/test.txt";
         File testInputFile;

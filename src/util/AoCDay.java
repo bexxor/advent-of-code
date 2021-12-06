@@ -33,6 +33,10 @@ public abstract class AoCDay {
 		return InputReaderUtil.getFirstLine(year, day);
 	}
 
+	public String getTestLine() {
+		return InputReaderUtil.getTestFirstLine(year);
+	}
+
 	public Stream<String> getInputStream() {
 		return InputReaderUtil.inputAsStreamOfLines(year, day);
 	}
