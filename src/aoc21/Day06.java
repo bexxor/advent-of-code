@@ -8,12 +8,12 @@ import java.util.stream.Collectors;
 public class Day06 extends AoCDay {
 
     private final static int STAGE = 9;
-    private final LinkedList<Integer> fish;
+    private final List<Integer> fish;
     private final long[] amount;
 
     public Day06(int day) {
         super(day, 2021, 2);
-        this.fish = Arrays.stream(getFirstLine().split(",")).map(Integer::parseInt).collect(Collectors.toCollection(LinkedList::new));
+        this.fish = Arrays.stream(getFirstLine().split(",")).map(Integer::parseInt).collect(Collectors.toList());
         this.amount = new long[STAGE];
         handleInput();
 
