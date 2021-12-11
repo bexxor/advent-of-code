@@ -6,8 +6,15 @@ import java.util.Map;
 
 public class GridUtil {
 
-	public static final Map<String, List<Integer>> DIR =Map.of("U", List.of(-1,0), "D", List.of(+1, 0),"L", List.of(0, -1), "R", List.of(0, +1));
-
+	private static final Map<String, List<Integer>> DIR = Map.of(
+			"U", List.of(-1, 0),
+			"D", List.of(+1, 0),
+			"L", List.of(0, -1),
+			"R", List.of(0, +1),
+			"UL",  List.of(-1, -1),
+			"UR",  List.of(-1, +1),
+			"DL",  List.of(+1, -1),
+			"DR",  List.of(+1, +1));
 
 	public static int countNeighbours(int i, int j, String[][] array2d, String val) {
 		int count = 0;
