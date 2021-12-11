@@ -20,7 +20,7 @@ public class Main {
 		}
 		try {
 			String className = "aoc" + yy + ".Day" + dd;
-			AoCDay aoCDay = (AoCDay) Class.forName(className).getDeclaredConstructor(int.class).newInstance(day);
+			AoCDay aoCDay = (AoCDay) Class.forName(className).getDeclaredConstructor(int.class).newInstance(Integer.parseInt(dd));
 			System.out.println(aoCDay.solve());
 		} catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException e) {
 			e.printStackTrace();

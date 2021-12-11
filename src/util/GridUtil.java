@@ -1,8 +1,13 @@
 package util;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 public class GridUtil {
+
+	public static final Map<String, List<Integer>> DIR =Map.of("U", List.of(-1,0), "D", List.of(+1, 0),"L", List.of(0, -1), "R", List.of(0, +1));
+
 
 	public static int countNeighbours(int i, int j, String[][] array2d, String val) {
 		int count = 0;
