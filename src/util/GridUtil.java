@@ -11,10 +11,10 @@ public class GridUtil {
 			"D", List.of(+1, 0),
 			"L", List.of(0, -1),
 			"R", List.of(0, +1),
-			"UL",  List.of(-1, -1),
-			"UR",  List.of(-1, +1),
-			"DL",  List.of(+1, -1),
-			"DR",  List.of(+1, +1));
+			"UL", List.of(-1, -1),
+			"UR", List.of(-1, +1),
+			"DL", List.of(+1, -1),
+			"DR", List.of(+1, +1));
 
 	public static int countNeighbours(int i, int j, String[][] array2d, String val) {
 		int count = 0;
@@ -280,5 +280,11 @@ public class GridUtil {
 			System.arraycopy(square[i + 1], 1, noBorders[i], 0, size);
 		}
 		return noBorders;
+	}
+
+	public static void fill(String[][] grid, String val) {
+		for (String[] strings : grid) {
+			Arrays.fill(strings, val);
+		}
 	}
 }
