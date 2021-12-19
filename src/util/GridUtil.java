@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class GridUtil {
 
+
+	public static final int DIRS = 4;
+	public static final int[] dirX = {1, 0, -1, 0};
+	public static final int[] dirY = {0, 1, 0, -1};
+
 	private static final Map<String, List<Integer>> DIR = Map.of(
 			"U", List.of(-1, 0),
 			"D", List.of(+1, 0),
@@ -191,6 +196,12 @@ public class GridUtil {
 
 	public static void print2D(Long[][] square) {
 		for (Long[] line : square)
+			System.out.println(Arrays.toString(line));
+		System.out.println();
+	}
+
+	public static void print2D(long[][] square) {
+		for (long[] line : square)
 			System.out.println(Arrays.toString(line));
 		System.out.println();
 	}
