@@ -12,6 +12,8 @@ public class InputService {
 	private static final String AOC_URL = "https://adventofcode.com/";
 	private static final String SESSION = System.getenv("AOC_SESSION");
 	private static final String PATH = "src/resources/";
+	private static int day = LocalDate.now().getDayOfMonth();
+	private static int year = LocalDate.now().getYear();
 
 	private static void createInput(String year, String day) {
 		String dirName = PATH + year;
@@ -47,8 +49,17 @@ public class InputService {
 	}
 
 	public static void main(String[] args) {
-		LocalDate today = LocalDate.now();
-		createInput(String.valueOf(today.getYear()), String.valueOf(today.getDayOfMonth()));
+		String dd;
+		String yyyy;
+		if (args.length == 2) {
+			dd = args[0];
+			yyyy = args[1];
+		} else {
+			dd =  day < 10 ? "0" + day :String.valueOf(day);
+			yyyy = String.valueOf(year);
+		}
+
+		createInput(yyyy, dd);
 		//createInput(String.valueOf(2020), String.valueOf(1));
 	}
 }
