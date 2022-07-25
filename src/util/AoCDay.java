@@ -45,6 +45,14 @@ public abstract class AoCDay {
 		return InputReaderUtil.getTestInput(year);
 	}
 
+	public String getTestString(){
+		return InputReaderUtil.getTestInputAsString(year);
+	}
+
+	public String getInputString(){
+		return InputReaderUtil.getInputAsString(year, day);
+	}
+
 	public List<String> getTestList() {
 		return InputReaderUtil.getTestInput(year).collect(Collectors.toList());
 	}

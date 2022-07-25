@@ -212,6 +212,18 @@ public class GridUtil {
 		System.out.println();
 	}
 
+	public static void print2D(char[][] square) {
+		for (char[] line : square)
+			System.out.println(Arrays.toString(line));
+		System.out.println();
+	}
+
+	public static void print2D(Object[][] square) {
+		for (Object[] line : square)
+			System.out.println(Arrays.toString(line));
+		System.out.println();
+	}
+
 	public static void print2D(String[][] square) {
 		for (String[] line : square)
 			System.out.println(Arrays.toString(line));

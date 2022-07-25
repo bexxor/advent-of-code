@@ -19,14 +19,7 @@ public class InputReaderUtil {
     }
 
     public static String getTestFirstLine(int year) {
-        String filepath = year + "/test.txt";
-        File testInputFile;
-        URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
-        if (input == null) {
-            throw new IllegalArgumentException(filepath + " not found!!");
-        } else {
-            testInputFile =  new File(input.getFile());
-        }
+        File testInputFile = openTestFile(year);
         String inputLine = "";
         try {
             InputStream is = new FileInputStream(testInputFile);
@@ -39,14 +32,7 @@ public class InputReaderUtil {
     }
 
     public static Stream<String> getTestInput(int year) {
-        String filepath = year + "/test.txt";
-        File testInputFile;
-        URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
-        if (input == null) {
-            throw new IllegalArgumentException(filepath + " not found!!");
-        } else {
-            testInputFile =  new File(input.getFile());
-        }
+        File testInputFile = openTestFile(year);
         try {
             InputStream is = new FileInputStream(testInputFile);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
@@ -79,5 +65,41 @@ public class InputReaderUtil {
         } else {
             return new File(input.getFile());
         }
+    }
+
+    public static String getInputAsString(int year, int day) {
+        return getStringFromFile(getInputFile(year, day));
+    }
+
+    public static String getTestInputAsString(int year) {
+        return getStringFromFile(openTestFile(year));
+    }
+
+    private static String getStringFromFile(File testInputFile) {
+        StringBuilder builder = new StringBuilder();
+        try {
+            InputStream is = new FileInputStream(testInputFile);
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String str;
+            while ((str=br.readLine())!=null){
+                builder.append(str).append("\n");
+            }
+            return builder.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    private static File openTestFile(int year) {
+        String filepath = year + "/test.txt";
+        File testInputFile;
+        URL input = InputReaderUtil.class.getClassLoader().getResource(filepath);
+        if (input == null) {
+            throw new IllegalArgumentException(filepath + " not found!!");
+        } else {
+            testInputFile =  new File(input.getFile());
+        }
+        return testInputFile;
     }
 }
